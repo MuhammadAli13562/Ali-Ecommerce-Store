@@ -4,6 +4,7 @@ import logo from "@/public/delivery-logo.svg";
 import { Input } from "@/components/ui/input";
 import { TopLinks } from "../constants";
 import Cart from "./Cart";
+import searchlogo from "@/public/search.svg";
 
 export default function TopBar() {
   return (
@@ -39,11 +40,17 @@ const NavigationLinks = () => {
 
 const SearchBar = () => {
   return (
-    <div className="flex-1 flex-center ">
-      <Input
-        className=" bg-yellow-800 text-white border-none w-3/6"
-        placeholder="Search"
-      />
+    <div className="flex-1 flex-center  ">
+      <Input className=" bg-yellow-800  border-none w-3/6" placeholder="" />
+      <button className="-ml-8 z-10">
+        <Image
+          className=""
+          src={searchlogo}
+          height={50}
+          width={25}
+          alt="search"
+        />
+      </button>
     </div>
   );
 };

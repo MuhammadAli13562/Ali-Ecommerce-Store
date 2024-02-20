@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   description: "ship through best ecommerce platform",
 };
 
-export const revalidate = 0;
-
 export default function RootLayout({
   children,
 }: Readonly<{
