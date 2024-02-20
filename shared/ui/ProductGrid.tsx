@@ -8,13 +8,14 @@ const ProductGrid = ({ Products }: { Products: SanityValues["Product"][] }) => {
   return (
     <div className="flex justify-center flex-wrap w-full gap-4 ">
       {Products.map((product) => (
-        <div className="rounded-lg p-4 bg-white w-80  flex flex-col justify-center items-center">
+        <div className="rounded-lg p-4 bg-white w-[400px]   flex flex-col justify-center items-center">
           <Image
             src={
-              (product?.image && urlFor(product.image).width(500).url()) || ""
+              (product?.image && urlFor(product.image).width(200).url()) || ""
             }
+            loading="eager"
             alt={product.description || "alt"}
-            width={300}
+            width={200}
             height={200}
             className="flex-1 "
           />

@@ -2,21 +2,35 @@
 
 import { useCart } from "@/app/CartProvider";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
+import toast from "react-hot-toast";
 import { SanityValues } from "@/lib/sanity/sanity.config";
 
 const AddCartButton = ({ product }: { product: SanityValues["Product"] }) => {
-  const { addItemToCart } = useCart();
-  const { toast } = useToast();
+  const { CartItems, addItemToCart } = useCart();
 
   const handleAddtoCart = () => {
-    addItemToCart(product);
-    toast({
-      title: "Item Added to Cart",
+    const PresentInCart = CartItems.find((Item) => Item._id === product._id);
+    if (PresentInCart) {
+      toast("Already in Cart", {
+        style: { color: "black", backgroundColor: "lightgreen" },
+      });
+      return;
+    }
+
+    addItemToCart({ ...product, quantity: 1 });
+    toast("One Item Added to Cart", {
+      style: {
+        backgroundColor: "lightgreen",
+        color: "black",
+      },
     });
   };
 
-  return <Button onClick={handleAddtoCart}>Add to Cart</Button>;
+  return (
+    <Button className="" onClick={handleAddtoCart}>
+      Add to Cart
+    </Button>
+  );
 };
 
 export default AddCartButton;

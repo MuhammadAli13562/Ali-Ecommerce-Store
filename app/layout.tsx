@@ -4,7 +4,7 @@ import "./globals.css";
 import TopBar from "@/shared/ui/TopBar";
 import BottomBar from "@/shared/ui/BottomBar";
 import { CartProvider } from "./CartProvider";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "toShip",

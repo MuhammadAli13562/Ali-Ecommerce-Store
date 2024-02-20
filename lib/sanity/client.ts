@@ -1,5 +1,8 @@
-import { createClient } from "next-sanity";
-import { SanityValues } from "./sanity.config";
+import {
+  createClient,
+  type ClientConfig,
+  type QueryParams,
+} from "@sanity/client";
 
 export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
@@ -9,11 +12,17 @@ export const client = createClient({
   perspective: "published",
 });
 
-export default async function getAllData() {
-  const products: SanityValues["Product"][] = await client.fetch(
-    `*[_type == "Product"]`
-  );
-
-  console.log("products : ", products);
-  return products;
+export async function sanityFetch<QueryResponse>({
+  query,
+  qParams,
+  tags,
+}: {
+  query: string;
+  qParams?: QueryParams;
+  tags: string[];
+}): Promise<QueryResponse> {
+  return client.fetch<QueryResponse>(query, qParams || {}, {
+    cache: "force-cache",
+    next: { tags },
+  });
 }

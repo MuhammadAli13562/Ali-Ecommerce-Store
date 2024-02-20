@@ -1,20 +1,59 @@
 "use client";
 import { SanityValues } from "@/lib/sanity/sanity.config";
-import { ReactNode, createContext, useContext, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+
+export type ProductWithQuantity = SanityValues["Product"] & {
+  quantity: number;
+};
 
 type CartContextType = {
-  CartItems: SanityValues["Product"][];
-  addItemToCart: (product: SanityValues["Product"]) => void;
+  CartItems: ProductWithQuantity[];
+  TotalPrice: number;
+  addItemToCart: (product: ProductWithQuantity) => void;
+  updateItemQuantityInCart: (product_id: string, newQuantity: number) => void;
   removeItemFromCart: (product_id: string) => void;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [CartItems, setCartItems] = useState<SanityValues["Product"][]>([]);
+const CalculateTotalPrice = (CartItems: ProductWithQuantity[]) => {
+  const totalPrice = CartItems.reduce((total, item) => {
+    return total + item.price! * item.quantity;
+  }, 0);
 
-  const addItemToCart = (product: SanityValues["Product"]) => {
+  return totalPrice;
+};
+
+export const CartProvider = ({ children }: { children: ReactNode }) => {
+  const [CartItems, setCartItems] = useState<ProductWithQuantity[]>([]);
+  const [TotalPrice, setTotalPrice] = useState<number>(0);
+
+  useEffect(() => {
+    setTotalPrice(CalculateTotalPrice(CartItems));
+  }, [CartItems]);
+
+  const addItemToCart = (product: ProductWithQuantity) => {
+    console.log("added product :", product);
+
     const updatedCart = [...CartItems, product];
+    setCartItems(updatedCart);
+  };
+
+  const updateItemQuantityInCart = (
+    product_id: string,
+    newQuantity: number
+  ) => {
+    const updatedCart = CartItems.map((item) => {
+      if (item._id === product_id) return { ...item, quantity: newQuantity };
+      return item;
+    });
+
     setCartItems(updatedCart);
   };
 
@@ -25,7 +64,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const value = {
     CartItems,
+    TotalPrice,
     addItemToCart,
+    updateItemQuantityInCart,
     removeItemFromCart,
   };
 

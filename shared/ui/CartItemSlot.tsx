@@ -2,30 +2,49 @@ import { useCart } from "@/app/CartProvider";
 import urlFor from "@/lib/sanity/urlFor";
 import Image from "next/image";
 import RemoveFromCartButton from "./RemoveFromCartButton";
-import { Button } from "@/components/ui/button";
-import Checkout from "./Checkout";
+import CartQuantModifier from "./CartQuantModifier";
 
 const CartItemSlot = () => {
-  const { CartItems } = useCart();
+  const { CartItems, updateItemQuantityInCart } = useCart();
 
   return (
-    <div className="flex flex-col h-full gap-8">
-      <p className="font-bold text-3xl text-white text-center">My Cart</p>
-      <div id="Cart Items" className="flex flex-1 flex-col gap-8">
+    <div
+      className={
+        CartItems.length > 0
+          ? "flex flex-col gap-8 flex-1 overflow-y-auto pl-4 pr-4 rounded-xl overflow-x-hidden mb-6"
+          : "hidden"
+      }
+    >
+      <div id="Cart Items" className={"flex flex-1 flex-col gap-8 mt-12 mb-6"}>
         {CartItems.map((mycartItem) => (
-          <div className="flex  bg-yellow-950 rounded-lg">
+          <div className="flex  bg-white rounded-lg">
             <Image
-              src={urlFor(mycartItem.image).width(100).url()}
-              width={100}
-              height={100}
+              src={urlFor(mycartItem.image).width(150).url()}
+              width={150}
+              height={170}
               alt={mycartItem.title || "item"}
             />
-            <p>{mycartItem.title}</p>
-            <RemoveFromCartButton product_id={mycartItem._id} />
+            <div className="flex flex-col justify-between pt-2 pb-2  h-[180px] w-3/5">
+              <div className="flex justify-between items-center">
+                <span className="font-bold text-black text-xl w-3/4">
+                  {mycartItem.title}
+                </span>
+                <span className=" font-extrabold text-xl text-black">
+                  ${mycartItem.price! * mycartItem.quantity}
+                </span>
+              </div>
+              <div className="w-full">{mycartItem.description}</div>
+              <div className="flex  justify-center gap-12 items-center">
+                <CartQuantModifier
+                  mycartItem={mycartItem}
+                  updateItemQuantityInCart={updateItemQuantityInCart}
+                />
+                <RemoveFromCartButton product_id={mycartItem._id} />
+              </div>
+            </div>
           </div>
         ))}
       </div>
-      <Checkout />
     </div>
   );
 };

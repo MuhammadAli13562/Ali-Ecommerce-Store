@@ -25,7 +25,7 @@ const BottomBar = () => {
         </div>
       </div>
       <div id="base bar" className="p-4 mt-6 w-full border-t-2 border-gray-800">
-        <p className="text-center text-black  ">
+        <p className="text-center font-mono text-gray-900 text-lg ">
           Built with <span>&#x2764;</span> by Ali
         </p>
       </div>

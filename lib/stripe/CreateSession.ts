@@ -1,13 +1,10 @@
 "use server";
 
-import { SanityValues } from "../sanity/sanity.config";
+import { ProductWithQuantity } from "@/app/CartProvider";
 
 const stripe = require("stripe")(process.env.NEXT_STRIPE_SECRET_KEY);
 
-export async function CreateStripeSession(
-  CartItems: SanityValues["Product"][]
-) {
-  //const PriceIds = await GetAllPriceIDs(CartItems);
+export async function CreateStripeSession(CartItems: ProductWithQuantity[]) {
   const line_items = CartItems.map((Item) => ({
     price_data: {
       currency: "usd",
@@ -16,7 +13,7 @@ export async function CreateStripeSession(
       },
       unit_amount: Item.price && Item.price * 100,
     },
-    quantity: 1,
+    quantity: Item.quantity,
   }));
 
   const session = await stripe.checkout.sessions.create({
@@ -28,23 +25,23 @@ export async function CreateStripeSession(
   return session;
 }
 
-export async function GetAllPriceIDs(CartItems: SanityValues["Product"][]) {
-  const priceIdsPromises = CartItems.map(async (Item) => {
-    const PriceObject = await stripe.prices.create({
-      currency: "usd",
-      unit_amount: Item.price && Item.price * 100,
-      product_data: {
-        name: Item.title,
-      },
-    });
+// export async function GetAllPriceIDs(CartItems: SanityValues["Product"][]) {
+//   const priceIdsPromises = CartItems.map(async (Item) => {
+//     const PriceObject = await stripe.prices.create({
+//       currency: "usd",
+//       unit_amount: Item.price && Item.price * 100,
+//       product_data: {
+//         name: Item.title,
+//       },
+//     });
 
-    console.log("PriceObject : ", PriceObject);
+//     console.log("PriceObject : ", PriceObject);
 
-    return PriceObject.id;
-  });
+//     return PriceObject.id;
+//   });
 
-  const priceIds = await Promise.all(priceIdsPromises);
-  console.log("priceIds resolved :", priceIds);
+//   const priceIds = await Promise.all(priceIdsPromises);
+//   console.log("priceIds resolved :", priceIds);
 
-  return priceIds;
-}
+//   return priceIds;
+// }

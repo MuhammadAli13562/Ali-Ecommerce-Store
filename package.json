@@ -22,6 +22,7 @@
     "next-sanity": "^8.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
     "sanity": "^3.29.1",
     "stripe": "^14.17.0",
     "swr": "^2.2.5",

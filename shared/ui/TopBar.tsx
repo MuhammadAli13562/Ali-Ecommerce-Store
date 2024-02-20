@@ -3,7 +3,7 @@ import Link from "next/link";
 import logo from "@/public/delivery-logo.svg";
 import { Input } from "@/components/ui/input";
 import { TopLinks } from "../constants";
-import CartDialog from "./CartDialog";
+import Cart from "./Cart";
 
 export default function TopBar() {
   return (
@@ -41,13 +41,9 @@ const SearchBar = () => {
   return (
     <div className="flex-1 flex-center ">
       <Input
-        className="bg-black text-white border-none w-3/6"
+        className=" bg-yellow-800 text-white border-none w-3/6"
         placeholder="Search"
       />
     </div>
   );
-};
-
-const Cart = () => {
-  return <CartDialog />;
 };
