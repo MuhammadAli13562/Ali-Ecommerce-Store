@@ -39,3 +39,11 @@ export const BottomLinks = [
     ref: "/faq",
   },
 ];
+
+import winter from "@/public/Carousel/winter.jpeg";
+import fashionoutfit from "@/public/Carousel/fashionoutf.jpg";
+import fashionweek from "@/public/Carousel/fashionweek.jpg";
+import formal from "@/public/Carousel/formal.jpeg";
+import newspring from "@/public/Carousel/newspring.jpg";
+
+export const CarouselImages = [winter, formal, newspring];

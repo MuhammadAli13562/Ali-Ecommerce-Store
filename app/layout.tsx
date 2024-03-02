@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import TopBar from "@/shared/ui/TopBar";
-import BottomBar from "@/shared/ui/BottomBar";
+import TopBar from "@/shared/ui/layout/TopBar";
+import BottomBar from "@/shared/ui/layout/BottomBar";
 import { CartProvider } from "./CartProvider";
 import { Toaster } from "react-hot-toast";
 
@@ -18,12 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-full">
+      <body className="h-full bg-white">
         <CartProvider>
           <TopBar />
-          {children}
-          <BottomBar />
-          <Toaster />
+          <div className="absolute mt-48">
+            {children}
+            <BottomBar />
+            <Toaster />
+          </div>
         </CartProvider>
       </body>
     </html>

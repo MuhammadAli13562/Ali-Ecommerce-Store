@@ -2,13 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/delivery-logo.svg";
 import { Input } from "@/components/ui/input";
-import { TopLinks } from "../constants";
-import Cart from "./Cart";
-import searchlogo from "@/public/search.svg";
+import { TopLinks } from "../../constants";
+import Cart from "../Cart/Cart";
 
 export default function TopBar() {
   return (
-    <div className="flex-center mt-4 mb-4 p-4">
+    <div className="flex-center z-50 bg-white top-0 h-32 fixed w-full p-4 border-b-2 border-solid border-gray-200 shadow-xl">
       <NavigationLinks />
       <SearchBar />
       <Cart />
@@ -41,15 +40,9 @@ const NavigationLinks = () => {
 const SearchBar = () => {
   return (
     <div className="flex-1 flex-center  ">
-      <Input className=" bg-yellow-800  border-none w-3/6" placeholder="" />
-      <button className="-ml-8 z-10">
-        <Image
-          className=""
-          src={searchlogo}
-          height={50}
-          width={25}
-          alt="search"
-        />
+      <Input className=" bg-gray-400  border-none w-3/6" placeholder="" />
+      <button className="-ml-12 z-10 bg-gray-600 p-2 pr-4  rounded-r-3xl text-white">
+        Search
       </button>
     </div>
   );

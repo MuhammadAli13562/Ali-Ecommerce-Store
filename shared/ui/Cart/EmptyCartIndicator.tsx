@@ -12,13 +12,13 @@ const EmptyCartIndicator = ({
     <div
       className={
         CartItems.length == 0
-          ? "flex flex-col items-center justify-center mt-48 "
+          ? "flex flex-col items-center justify-center place-center w-full gap-12 "
           : "hidden"
       }
     >
-      <p className="text-3xl font-bold p-4">Cart is Empty</p>
+      <p className="text-5xl text-gray-400 font-bold ">Cart is Empty</p>
       <Button
-        className="bg-orange-800 hover:text-black text-black hover:bg-orange-900"
+        className="bg-gray-500 hover:text-black text-black hover:bg-gray-700"
         onClick={() => {
           setShowCart(false);
           document.body.style.overflow = "";
