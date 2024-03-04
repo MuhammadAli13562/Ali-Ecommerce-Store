@@ -2,11 +2,15 @@
 
 import { SanityValues } from "@/lib/sanity/sanity.config";
 import { MenCategories, WomenCategories } from "@/lib/sanity/schemas";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import ProductGrid from "./ProductGrid";
 
 const defaultOption = { label: "All", value: "All" };
+type OptionType = {
+  label: string;
+  value: string;
+};
 
 const SelectedProduct = ({
   Products,
@@ -15,10 +19,8 @@ const SelectedProduct = ({
   Products: SanityValues["Product"][];
   gender: string;
 }) => {
-  const [selectedOption, setSelectedOption] = useState<{
-    label: string;
-    value: string;
-  }>(defaultOption);
+  const [selectedOption, setSelectedOption] =
+    useState<OptionType>(defaultOption);
   const selectOptions = gender === "men" ? MenCategories : WomenCategories;
   const options = selectOptions.map((opt) => ({
     value: opt.toLowerCase(),
@@ -29,6 +31,13 @@ const SelectedProduct = ({
     selectedOption.value === "All"
       ? Products
       : Products.filter((prod) => prod.category === selectedOption.value);
+
+  console.log("Select Rerendered ");
+  console.log("SelectedOption :", selectedOption);
+
+  useEffect(() => {
+    console.log("in Use Effect");
+  }, [selectedOption]);
 
   return (
     <div className="w-full ">
