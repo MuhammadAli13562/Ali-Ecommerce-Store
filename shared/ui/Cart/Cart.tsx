@@ -13,7 +13,7 @@ const Cart = () => {
   const [showCart, setShowCart] = useState(false);
   const { CartItems } = useCart();
   return (
-    <div className="w-52 flex-center ">
+    <div className="w-48 flex-center ">
       {/* Cart Trigger Button */}
       <div className="flex flex-col items-center justify-center">
         <div
@@ -57,7 +57,7 @@ const CartTray = ({ showCart, setShowCart }: any) => {
       )}
       <div
         id="Cart Content"
-        className={`flex flex-col w-[480px]  fixed transition-transform duration-300 transform rounded-sm right-0 h-screen bg-black z-20 top-0 ${
+        className={`flex flex-col w-[400px] md:w-[480px]  fixed transition-transform duration-300 transform rounded-sm right-0 h-screen bg-black z-20 top-0 ${
           showCart ? "translate-x-0" : "translate-x-full "
         }`}
       >

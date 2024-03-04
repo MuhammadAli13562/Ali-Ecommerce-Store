@@ -37,7 +37,7 @@ const SelectedProduct = ({
           defaultValue={selectedOption}
           onChange={setSelectedOption as any}
           options={[{ label: "All", value: "All" }, ...options] as any}
-          className=" w-36 "
+          className=" w-32 lg:w-36 "
         />
       </div>
       {SelectedProducts.length === 0 ? (

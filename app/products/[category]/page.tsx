@@ -13,7 +13,9 @@ const page = async ({ params }: { params: { category: string } }) => {
 
   return (
     <div className="col-center gap-12 ">
-      <p className="text-3xl font-bold">{category.toUpperCase()} </p>
+      <p className="text-xl md:text-3xl self-start pl-8 md:p-0 md:self-center font-bold">
+        {category.toUpperCase()}{" "}
+      </p>
       <SelectedProduct gender={category} Products={Products} />
     </div>
   );
