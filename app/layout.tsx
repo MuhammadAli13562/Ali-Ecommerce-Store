@@ -21,11 +21,11 @@ export default function RootLayout({
       <body className="h-full bg-white">
         <CartProvider>
           <TopBar />
-          <div className="absolute mt-48">
-            {children}
+          <div className="mt-48 flex flex-col min-h-screen ">
+            <div className="flex-1 "> {children}</div>
             <BottomBar />
-            <Toaster />
           </div>
+          <Toaster />
         </CartProvider>
       </body>
     </html>

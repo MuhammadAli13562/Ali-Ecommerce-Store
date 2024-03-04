@@ -6,7 +6,7 @@ import { BottomLinks } from "../../constants";
 
 const BottomBar = () => {
   return (
-    <div className=" flex flex-col justify-center items-center mt-28  w-full bottom-0">
+    <div className=" flex flex-col justify-center items-center  w-full mt-12">
       <div className="flex w-full bg-black   border-t-2  border-t-gray-700 ">
         <div className="mt-6 flex gap-12">
           <Link href="/">

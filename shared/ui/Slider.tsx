@@ -13,7 +13,7 @@ const Slider = () => {
       <div className="flex ">
         {CarouselImages.map((img) => (
           <Image
-            alt="Mountains"
+            alt="featured"
             src={img}
             width="1300"
             className="mr-12 border-8 border-black shadow-gray-500"
