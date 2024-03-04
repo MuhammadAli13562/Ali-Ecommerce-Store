@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import logo from "@/public/delivery-logo.svg";
+import logo from "@/public/logo3.png";
 import Link from "next/link";
 import { BottomLinks } from "../../constants";
 
@@ -11,8 +11,7 @@ const BottomBar = () => {
         <div className="mt-6 flex gap-12">
           <Link href="/">
             <div className="flex-center ml-4">
-              <Image src={logo} width={80} alt="logo" />
-              <span className="font-bold  text-yellow-900">toShip</span>
+              <Image src={logo} width={170} alt="logo" />
             </div>
           </Link>
           <div className="flex flex-col">

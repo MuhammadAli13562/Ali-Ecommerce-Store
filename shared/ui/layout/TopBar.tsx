@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/delivery-logo.svg";
+import logo from "@/public/logo3.png";
 import { TopLinks } from "../../constants";
 import Cart from "../Cart/Cart";
 
@@ -22,8 +22,7 @@ const HomeLink = () => {
       className="flex justify-center items-center md:justify-start  "
       href="/"
     >
-      <Image src={logo} alt="logo" width={75} />
-      <p className="font-bold hidden md:flex text-yellow-900 -ml-2">toShip</p>
+      <Image src={logo} alt="logo" width={170} />
     </Link>
   );
 };

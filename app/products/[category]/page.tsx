@@ -1,5 +1,4 @@
 import { getDataByGender } from "@/lib/sanity/getallData";
-import ProductGrid from "@/shared/ui/Product/ProductGrid";
 import SelectedProduct from "@/shared/ui/Product/SelectedProduct";
 import React from "react";
 
