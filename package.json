@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
     "@sanity-typed/types": "^6.3.2",
@@ -25,6 +26,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
+    "react-select": "^5.8.0",
     "sanity": "^3.29.1",
     "stripe": "^14.17.0",
     "swr": "^2.2.5",

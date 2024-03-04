@@ -21,5 +21,35 @@ export const productType = defineType({
       name: "image",
       type: "image",
     }),
+    defineField({
+      name: "Gender",
+      type: "string",
+    }),
+    defineField({
+      name: "category",
+      type: "string",
+    }),
   ],
 });
+
+export const MenCategories = [
+  "Shirts",
+  "Accessories",
+  "Hats",
+  "Belts",
+  "Pants",
+  "Jackets",
+  "Casual",
+  "Formal",
+  "Shorts",
+];
+export const WomenCategories = [
+  "Dresses",
+  "Shirts",
+  "Leggings",
+  "Accessories",
+  "Sundress",
+  "Sweaters",
+  "Pants",
+  "Hats",
+];

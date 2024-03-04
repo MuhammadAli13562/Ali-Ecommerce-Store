@@ -1,22 +1,22 @@
-import getAllData from "@/lib/sanity/getallData";
-import ProductGrid from "@/shared/ui/ProductGrid";
+import { getAllData, getLatestData } from "@/lib/sanity/getallData";
+import ProductGrid from "@/shared/ui/Product/ProductGrid";
 import Slider from "@/shared/ui/Slider";
 
 export default async function Home() {
   return (
     <div className="w-full">
       <Slider />
-      <MostPopular />
+      <LatestProducts />
     </div>
   );
 }
 
-const MostPopular = async () => {
-  const Products = await getAllData();
+const LatestProducts = async () => {
+  const Products = await getLatestData();
 
   return (
     <div className="col-center gap-12 ">
-      <p className="text-3xl font-bold">Most Popular Today</p>
+      <p className="text-3xl font-bold">Latest Clothing Line </p>
       <ProductGrid Products={Products} />
     </div>
   );

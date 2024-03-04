@@ -49,6 +49,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     product_id: string,
     newQuantity: number
   ) => {
+    if (newQuantity <= 0) return;
+
     const updatedCart = CartItems.map((item) => {
       if (item._id === product_id) return { ...item, quantity: newQuantity };
       return item;

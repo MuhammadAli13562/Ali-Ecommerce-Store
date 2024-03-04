@@ -1,15 +1,15 @@
 export const TopLinks = [
   {
     category: "All",
-    reference: "/search",
+    reference: "/products",
   },
   {
-    category: "Shirts",
-    reference: "/search/shirts",
+    category: "Men",
+    reference: "/products/men",
   },
   {
-    category: "Stickers",
-    reference: "/search/stickers",
+    category: "Women",
+    reference: "/products/women",
   },
 ];
 

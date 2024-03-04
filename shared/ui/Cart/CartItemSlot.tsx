@@ -17,14 +17,16 @@ const CartItemSlot = () => {
     >
       <div id="Cart Items" className={"flex flex-1 flex-col gap-8 mt-12 mb-6"}>
         {CartItems.map((mycartItem) => (
-          <div className="flex gap-4 bg-white rounded-lg">
-            <Image
-              src={urlFor(mycartItem.image).width(150).url()}
-              width={150}
-              height={170}
-              alt={mycartItem.title || "item"}
-            />
-            <div className="flex flex-col justify-between pt-2 pb-2  h-[180px] w-3/5">
+          <div className="flex gap-4 bg-white rounded-lg p-4">
+            <div className="">
+              <Image
+                src={urlFor(mycartItem.image).width(600).height(700).url()}
+                width={600}
+                height={600}
+                alt={mycartItem.title || "item"}
+              />
+            </div>
+            <div className="flex flex-col justify-between pt-2  w-3/5">
               <div className="flex justify-between items-center">
                 <span className="font-bold text-black text-xl w-3/4">
                   {mycartItem.title}
