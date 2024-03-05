@@ -13,7 +13,7 @@ export async function getAllData() {
 
 export async function getLatestData() {
   const products: SanityValues["Product"][] = await sanityFetch({
-    query: `*[_type == "Product"] | order(_createdAt desc) [0..3]`,
+    query: `*[_type == "Product"] | order(_createdAt desc)[0...4]`,
     tags: ["Product"],
   });
 

@@ -5,11 +5,11 @@ export const TopLinks = [
   },
   {
     category: "Men",
-    reference: "/products/men",
+    reference: "/products/men/all",
   },
   {
     category: "Women",
-    reference: "/products/women",
+    reference: "/products/women/all",
   },
 ];
 

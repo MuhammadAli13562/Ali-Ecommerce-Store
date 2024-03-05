@@ -53,3 +53,13 @@ export const WomenCategories = [
   "Pants",
   "Hats",
 ];
+
+export const MenCategoriesOptions = MenCategories.map((cat) => ({
+  value: cat.toLowerCase(),
+  label: cat,
+}));
+
+export const WomenCategoriesOptions = WomenCategories.map((cat) => ({
+  value: cat.toLowerCase(),
+  label: cat,
+}));
