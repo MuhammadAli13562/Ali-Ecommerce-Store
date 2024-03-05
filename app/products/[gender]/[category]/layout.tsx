@@ -1,5 +1,6 @@
 import Selector from "@/shared/ui/Product/Selector";
-import React, { ReactNode } from "react";
+import React, { ReactNode, Suspense } from "react";
+import Loading from "./loading";
 
 const layout = async ({
   children,
@@ -15,7 +16,7 @@ const layout = async ({
       <div className="w-36 absolute right-1/4">
         <Selector gender={gender} />
       </div>
-      {children}
+      <Suspense fallback={<Loading />}>{children}</Suspense>
     </div>
   );
 };

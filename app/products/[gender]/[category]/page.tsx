@@ -1,6 +1,7 @@
 import { getAllData } from "@/lib/sanity/getallData";
 import ProductGrid from "@/shared/ui/Product/ProductGrid";
 import SelectedProduct from "@/shared/ui/Product/SelectedProduct";
+import NoItemFound from "@/shared/ui/layout/NoItemFound";
 import React from "react";
 
 const page = async ({
@@ -20,12 +21,16 @@ const page = async ({
         );
   return (
     <div className="col-center gap-12 ">
-      <div className="flex gap-8 text-xl md:text-3xl self-start pl-8 md:p-0 md:self-center font-bold">
+      <div className="flex gap-2 md:gap-8 text-xl lg:mr-24 lg:text-3xl self-start pl-6 lg:p-0 lg:self-center font-bold">
         <span>{gender.toUpperCase()}</span>
         <span>-</span>
         <span>{category.toUpperCase()}</span>
       </div>
-      <ProductGrid Products={FilteredProducts} />
+      {FilteredProducts.length === 0 ? (
+        <NoItemFound />
+      ) : (
+        <ProductGrid Products={FilteredProducts} />
+      )}
     </div>
   );
 };
