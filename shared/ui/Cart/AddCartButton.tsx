@@ -12,23 +12,32 @@ const AddCartButton = ({ product }: { product: SanityValues["Product"] }) => {
     const PresentInCart = CartItems.find((Item) => Item._id === product._id);
     if (PresentInCart) {
       toast("Already in Cart", {
-        style: { color: "black", backgroundColor: "lightgreen" },
+        duration: 1000,
+        style: {
+          color: "black",
+          backgroundColor: "lightgreen",
+          marginTop: "70px",
+        },
       });
       return;
     }
 
     addItemToCart({ ...product, quantity: 1 });
     toast("Item Added to Cart", {
+      duration: 1000,
       style: {
         backgroundColor: "lightgreen",
         color: "black",
-        marginTop: "60px",
+        marginTop: "70px",
       },
     });
   };
 
   return (
-    <Button className="" onClick={handleAddtoCart}>
+    <Button
+      className="bg-white text-black border-2 border-solid border-gray-400 hover:text-white"
+      onClick={handleAddtoCart}
+    >
       Add to Cart
     </Button>
   );

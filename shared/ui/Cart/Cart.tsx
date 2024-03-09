@@ -16,6 +16,7 @@ const Cart = () => {
     <div className="w-24 flex-center ">
       {/* Cart Trigger Button */}
       <div className="flex flex-col items-center justify-center">
+        {/**ticker red */}
         <div
           className={
             CartItems.length
@@ -27,7 +28,7 @@ const Cart = () => {
         </div>
 
         <Button
-          className=" bg-transparent hover:bg-white"
+          className=" bg-transparent hover:bg-gray-200"
           onClick={() => {
             setShowCart(!showCart);
             document.body.style.overflow = "hidden";

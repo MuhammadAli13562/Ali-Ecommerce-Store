@@ -9,7 +9,7 @@ const ProductGrid = ({ Products }: { Products: SanityValues["Product"][] }) => {
     <div className="w-full flex flex-col justify-center items-center">
       <div className="flex justify-center flex-wrap w-2/3 gap-6">
         {Products.map((product) => (
-          <div className="border-2 border-solid border-gray-400 hover:border-black rounded-lg bg-white  h-auto py-2  flex flex-col justify-between items-center">
+          <div className=" transition-all duration-200 border-2 border-solid border-gray-200 hover:border-black rounded-lg bg-white  h-auto py-2  col-center">
             <div className=" flex flex-col p-2 justify-center items-center">
               <Image
                 src={

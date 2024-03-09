@@ -7,6 +7,7 @@ import { TopLinks } from "../../constants";
 import Cart from "../Cart/Cart";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import Navdot from "./Navdot";
 
 export default function TopBar() {
   useEffect(() => {
@@ -14,8 +15,11 @@ export default function TopBar() {
 
     const handleScroll = () => {
       if (elem) {
-        if (window.scrollY < 50) elem.style.height = "128px";
-        else elem.style.height = "80px";
+        if (window.scrollY < 50) {
+          elem.style.height = "128px";
+        } else {
+          elem.style.height = "80px";
+        }
       }
     };
 
@@ -29,11 +33,14 @@ export default function TopBar() {
   return (
     <div
       id="topbar"
-      className="flex-center transition-all duration-200 z-50 bg-white top-0 h-32 fixed w-full p-4 border-b-2 border-solid border-gray-200 shadow-lg"
+      className="flex-center transition-all duration-200 z-50  bg-zinc-100     top-0 h-32 fixed w-full p-4 border-b-2 border-solid border-gray-200 "
     >
       <div className="flex justify-around items-center w-full ">
         <HomeLink />
-        <div className="flex-center border-2 rounded-xl md:py-2 px-12 bg-gray-100 ">
+        <div
+          id="midtopbar"
+          className="flex-center border-2 border-gray-300 tansition-all duration-200 rounded-xl md:py-2 px-12 bg-zinc-100 "
+        >
           <NavigationLinks />
           <Cart />
         </div>
@@ -59,12 +66,15 @@ const NavigationLinks = () => {
     <div className="flex-center gap-2 md:gap-8 inactive-font-color ">
       {TopLinks &&
         TopLinks.map((mylink) => (
-          <Link
-            className="hover:underline text-black text-md md:text-xl font-sans"
-            href={mylink.reference}
-          >
-            {mylink.category}
-          </Link>
+          <div className="relative">
+            <Link
+              className="hover:bg-gray-200 p-2 rounded-xl text-black text-md md:text-xl font-sans"
+              href={mylink.reference}
+            >
+              {mylink.category}
+            </Link>
+            <Navdot category={mylink.category} />
+          </div>
         ))}
     </div>
   );
@@ -72,7 +82,7 @@ const NavigationLinks = () => {
 
 const AdminDashButton = () => {
   return (
-    <div className="relative flex flex-col bg-gray-200 hover:bg-gray-300  rounded-xl">
+    <div className="relative flex flex-col bg-transparent border-2 border-gray-300 hover:bg-gray-400 text-black  rounded-xl">
       <Link
         href="https://product2demo.sanity.studio"
         target="_blank"
