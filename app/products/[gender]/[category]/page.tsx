@@ -21,9 +21,7 @@ const page = async ({
         );
   return (
     <div className="col-center gap-12 ">
-      <div className="flex gap-2 md:gap-8 text-xl lg:mr-24 lg:text-3xl self-start pl-6 lg:p-0 lg:self-center font-bold">
-        <span>{gender.toUpperCase()}</span>
-        <span>-</span>
+      <div className="flex gap-2 md:gap-8 text-xl  lg:text-3xl self-start pl-6 lg:p-0 lg:self-center font-bold">
         <span>{category.toUpperCase()}</span>
       </div>
       {FilteredProducts.length === 0 ? (

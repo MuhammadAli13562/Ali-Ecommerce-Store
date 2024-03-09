@@ -15,9 +15,7 @@ const Navdot = ({ category }: { category: string }) => {
   const showDot = category.toLowerCase() === pathCategory;
 
   return (
-    <div
-      className={`"absolute place-center mt-[4px]  " ${!showDot && "hidden"}`}
-    >
+    <div className={`"absolute place-center mt-4  " ${!showDot && "hidden"}`}>
       <span className="text-5xl  text-slate-500">.</span>
     </div>
   );

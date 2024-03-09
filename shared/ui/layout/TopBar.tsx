@@ -39,7 +39,7 @@ export default function TopBar() {
         <HomeLink />
         <div
           id="midtopbar"
-          className="flex-center border-2 border-gray-300 tansition-all duration-200 rounded-xl md:py-2 px-12 bg-zinc-100 "
+          className="flex-center border-2 border-gray-300 tansition-all duration-200 rounded-xl px-12 bg-zinc-100 "
         >
           <NavigationLinks />
           <Cart />
@@ -82,7 +82,7 @@ const NavigationLinks = () => {
 
 const AdminDashButton = () => {
   return (
-    <div className="relative flex flex-col bg-transparent border-2 border-gray-300 hover:bg-gray-400 text-black  rounded-xl">
+    <div className="relative flex flex-col bg-transparent border-2 border-gray-300 hover:bg-gray-200 text-black  rounded-xl">
       <Link
         href="https://product2demo.sanity.studio"
         target="_blank"

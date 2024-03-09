@@ -13,10 +13,10 @@ const layout = async ({
 
   return (
     <div>
-      <div className="w-36 absolute right-1/4">
+      <Suspense fallback={<Loading />}>{children}</Suspense>
+      <div className="w-36 absolute mt-[190px] top-0 right-48 ">
         <Selector gender={gender} />
       </div>
-      <Suspense fallback={<Loading />}>{children}</Suspense>
     </div>
   );
 };
