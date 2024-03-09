@@ -6,7 +6,9 @@ import logo from "@/public/logonew.png";
 import { TopLinks } from "../../constants";
 import Cart from "../Cart/Cart";
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { motion, useAnimationControls } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { getIndexFromPath } from "@/lib/functions/getIndexFromPath";
 
 export default function TopBar() {
   useEffect(() => {
@@ -32,20 +34,15 @@ export default function TopBar() {
   return (
     <div
       id="topbar"
-      className="flex-center transition-all duration-200 z-50  bg-white     top-0 h-32 fixed w-full p-4 border-b-2 border-solid border-gray-200 "
+      className="flex-center transition-all duration-200 z-50  bg-white top-0 h-32 fixed w-full p-4 border-b-2 border-solid border-gray-200 shadow-lg"
     >
       <div className="flex justify-around items-center w-full ">
         <HomeLink />
+        <NavigationLinks />
         <div className="flex">
-          <div
-            id="midtopbar"
-            className="flex-center border-2 border-gray-300 tansition-all duration-200 rounded-3xl px-12 py-2 bg-white "
-          >
-            <NavigationLinks />
-          </div>
           <Cart />
+          <AdminDashButton />
         </div>
-        <AdminDashButton />
       </div>
     </div>
   );
@@ -63,19 +60,49 @@ const HomeLink = () => {
 };
 
 const NavigationLinks = () => {
+  const maskControls = useAnimationControls();
+  const path = usePathname();
+  const width = 100;
+
+  const handleClickLink = (index: number) => {
+    maskControls.start({
+      x: (index + 1) * width - width * 2.5,
+      opacity: index === -1 ? 0 : 0.4,
+      transition: {
+        duration: index === -1 ? 0 : 0.2,
+      },
+    });
+  };
+
+  useEffect(() => {
+    const newindex = getIndexFromPath(path);
+    handleClickLink(newindex);
+  }, [path]);
+
   return (
-    <div className="flex-center gap-2 md:gap-8 inactive-font-color ">
-      {TopLinks &&
-        TopLinks.map((mylink) => (
-          <div className="relative">
-            <Link
-              className="hover:bg-gray-200 p-2 rounded-xl text-black text-md md:text-xl font-sans"
-              href={mylink.reference}
-            >
-              {mylink.category}
-            </Link>
-          </div>
-        ))}
+    <div
+      id="midtopbar"
+      className="flex-center border-0 border-gray-300 tansition-all duration-200 rounded-3xl   bg-gray-100 "
+    >
+      <div className="flex-center relative border-2 border-gray-400 py-2 rounded-full px-4">
+        {TopLinks &&
+          TopLinks.map((mylink, index) => (
+            <div className="relative  flex-center">
+              <Link
+                className="  rounded-xl w-[100px] flex-center text-black  text-md md:text-xl font-sans"
+                onClick={() => handleClickLink(index)}
+                href={mylink?.reference || ""}
+              >
+                {mylink?.category}
+              </Link>
+            </div>
+          ))}
+        <motion.div
+          initial={{ x: -width * 2.5, opacity: 0 }}
+          animate={maskControls}
+          className={`absolute w-[${width}px] h-8  border-2 border-gray-800 bg-transparent rounded-full opacity-10`}
+        ></motion.div>
+      </div>
     </div>
   );
 };

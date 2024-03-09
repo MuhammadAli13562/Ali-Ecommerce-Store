@@ -11,6 +11,11 @@ export const TopLinks = [
     category: "Women",
     reference: "/products/women/all",
   },
+
+  {
+    category: "Kids",
+    reference: "/products/kids/all",
+  },
 ];
 
 export const BottomLinks = [
