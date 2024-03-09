@@ -20,7 +20,7 @@ const Checkout = () => {
         console.log("session : ", session);
         router.push(session.url);
 
-        toast("Checkout Successful !");
+        toast.success("Checkout Successful !");
       } catch (error: any) {
         toast("Error Checking Out !");
       }

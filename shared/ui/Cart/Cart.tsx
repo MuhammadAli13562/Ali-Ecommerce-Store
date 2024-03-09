@@ -13,13 +13,13 @@ const Cart = () => {
   const [showCart, setShowCart] = useState(false);
   const { CartItems } = useCart();
   return (
-    <div className="w-48 flex-center ">
+    <div className="w-24 flex-center ">
       {/* Cart Trigger Button */}
       <div className="flex flex-col items-center justify-center">
         <div
           className={
             CartItems.length
-              ? "bg-red-700 absolute mb-12 text-center text-white rounded-full w-8"
+              ? "bg-red-700 absolute mb-8 text-center text-white rounded-full w-6 scale-75"
               : "hidden"
           }
         >
@@ -27,7 +27,7 @@ const Cart = () => {
         </div>
 
         <Button
-          className="bg-gray-700 hover:bg-gray-500"
+          className=" bg-transparent hover:bg-white"
           onClick={() => {
             setShowCart(!showCart);
             document.body.style.overflow = "hidden";

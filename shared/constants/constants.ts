@@ -40,6 +40,8 @@ export const BottomLinks = [
   },
 ];
 
+export const credits = ["NextJS , Vercel , Sanity , Stripe"];
+
 import winter from "@/public/Carousel/winter.jpeg";
 import fashionoutfit from "@/public/Carousel/fashionoutf.jpg";
 import fashionweek from "@/public/Carousel/fashionweek.jpg";

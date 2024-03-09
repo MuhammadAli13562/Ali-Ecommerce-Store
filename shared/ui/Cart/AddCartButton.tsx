@@ -18,10 +18,11 @@ const AddCartButton = ({ product }: { product: SanityValues["Product"] }) => {
     }
 
     addItemToCart({ ...product, quantity: 1 });
-    toast("One Item Added to Cart", {
+    toast("Item Added to Cart", {
       style: {
         backgroundColor: "lightgreen",
         color: "black",
+        marginTop: "60px",
       },
     });
   };
