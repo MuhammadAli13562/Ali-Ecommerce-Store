@@ -33,7 +33,7 @@ export default function TopBar() {
   return (
     <div
       id="topbar"
-      className="flex-center transition-all duration-200 z-50  bg-zinc-100     top-0 h-32 fixed w-full p-4 border-b-2 border-solid border-gray-200 "
+      className="flex-center transition-all duration-200 z-50  bg-white     top-0 h-32 fixed w-full p-4 border-b-2 border-solid border-gray-200 "
     >
       <div className="flex justify-around items-center w-full ">
         <HomeLink />
