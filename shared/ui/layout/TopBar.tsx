@@ -7,7 +7,6 @@ import { TopLinks } from "../../constants";
 import Cart from "../Cart/Cart";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import Navdot from "./Navdot";
 
 export default function TopBar() {
   useEffect(() => {
@@ -16,7 +15,7 @@ export default function TopBar() {
     const handleScroll = () => {
       if (elem) {
         if (window.scrollY < 50) {
-          elem.style.height = "128px";
+          elem.style.height = "120px";
         } else {
           elem.style.height = "80px";
         }
@@ -37,11 +36,13 @@ export default function TopBar() {
     >
       <div className="flex justify-around items-center w-full ">
         <HomeLink />
-        <div
-          id="midtopbar"
-          className="flex-center border-2 border-gray-300 tansition-all duration-200 rounded-xl px-12 bg-zinc-100 "
-        >
-          <NavigationLinks />
+        <div className="flex">
+          <div
+            id="midtopbar"
+            className="flex-center border-2 border-gray-300 tansition-all duration-200 rounded-3xl px-12 py-2 bg-white "
+          >
+            <NavigationLinks />
+          </div>
           <Cart />
         </div>
         <AdminDashButton />
@@ -73,7 +74,6 @@ const NavigationLinks = () => {
             >
               {mylink.category}
             </Link>
-            <Navdot category={mylink.category} />
           </div>
         ))}
     </div>
