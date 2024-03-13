@@ -1,7 +1,7 @@
 import action from "./actions";
 
 export async function GET(request: Request) {
-  action();
+  await action();
 
   // const validTrigger =
   //   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ===
@@ -12,7 +12,7 @@ export async function GET(request: Request) {
 
   //   action();
   // }
-  // return Response.json({
-  //   message: "Welcome to Revalidate trigger !",
-  // });
+  return Response.json({
+    message: "Welcome to Revalidate trigger !",
+  });
 }
