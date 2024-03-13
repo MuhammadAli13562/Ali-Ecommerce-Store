@@ -100,7 +100,7 @@ const NavigationLinks = () => {
         <motion.div
           initial={{ x: -width * 2.5, opacity: 0 }}
           animate={maskControls}
-          className={`absolute w-[${width}px] h-8  border-2 border-gray-600 0  opacity-10`}
+          className={`absolute w-[${width}px] h-8  border-0 bg-gray-600 border-gray-600 0  opacity-10`}
         ></motion.div>
       </div>
     </div>
