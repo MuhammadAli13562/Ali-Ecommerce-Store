@@ -34,7 +34,7 @@ export default function TopBar() {
   return (
     <div
       id="topbar"
-      className="flex-center transition-all duration-200 z-50  bg-white top-0 h-32 fixed w-full p-4 border-b-2 border-solid border-gray-200 shadow-lg"
+      className=" select-none flex-center transition-all duration-200 z-50  bg-white top-0 h-32 fixed w-full p-4 border-b-2 border-solid border-gray-200 shadow-lg"
     >
       <div className="flex justify-around items-center w-full ">
         <HomeLink />
@@ -51,7 +51,7 @@ export default function TopBar() {
 const HomeLink = () => {
   return (
     <Link
-      className="flex justify-center items-center md:justify-start  "
+      className="flex justify-center items-center md:justify-start  p-4 rounded-full "
       href="/"
     >
       <Image src={logo} alt="logo" width={210} />
@@ -82,14 +82,14 @@ const NavigationLinks = () => {
   return (
     <div
       id="midtopbar"
-      className="flex-center border-0 border-gray-300 tansition-all duration-200 rounded-3xl   bg-gray-100 "
+      className="flex-center border-0 border-gray-300 tansition-all duration-200 rounded-3xl bg-gray-100 "
     >
-      <div className="flex-center relative border-2 border-gray-400 py-2 rounded-full px-4">
+      <div className="flex-center relative border-2 border-gray-400  rounded-full px-2 py-[4px]">
         {TopLinks &&
           TopLinks.map((mylink, index) => (
             <div className="relative  flex-center">
               <Link
-                className="  rounded-xl w-[100px] flex-center text-black  text-md md:text-xl font-sans"
+                className="  rounded-xl w-[100px] flex-center text-black  text-md md:text-lg font-sans"
                 onClick={() => handleClickLink(index)}
                 href={mylink?.reference || ""}
               >
@@ -100,7 +100,7 @@ const NavigationLinks = () => {
         <motion.div
           initial={{ x: -width * 2.5, opacity: 0 }}
           animate={maskControls}
-          className={`absolute w-[${width}px] h-8  border-2 border-gray-800 bg-transparent rounded-full opacity-10`}
+          className={`absolute w-[${width}px] h-6  border-2 border-gray-800 bg-transparent rounded-full opacity-10`}
         ></motion.div>
       </div>
     </div>
