@@ -18,22 +18,25 @@ const CartQuantModifier = ({
   };
 
   return (
-    <div className="flex">
-      <button
-        onClick={handleSubtractQuantitiy}
-        className="bg-black text-xl text-white w-8"
-      >
-        -
-      </button>
-      <div className="min-w-[25px] bg-gray-200 text-center">
-        {mycartItem.quantity}
+    <div className="flex flex-col gap-2 items-center justify-center">
+      <span>Quantity</span>
+      <div className="flex">
+        <button
+          onClick={handleSubtractQuantitiy}
+          className="bg-black text-xl text-white w-8"
+        >
+          -
+        </button>
+        <div className="min-w-[25px] bg-gray-200 text-center">
+          {mycartItem.quantity}
+        </div>
+        <button
+          onClick={handleAddQuantitiy}
+          className="bg-black text-xl text-white w-8"
+        >
+          +
+        </button>
       </div>
-      <button
-        onClick={handleAddQuantitiy}
-        className="bg-black text-xl text-white w-8"
-      >
-        +
-      </button>
     </div>
   );
 };

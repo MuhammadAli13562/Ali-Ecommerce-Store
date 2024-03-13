@@ -20,9 +20,9 @@ const CartItemSlot = () => {
           <div className="flex gap-4 bg-white rounded-lg p-4">
             <div className="">
               <Image
-                src={urlFor(mycartItem.image).width(600).height(700).url()}
-                width={600}
-                height={600}
+                src={urlFor(mycartItem.image).width(150).height(150).url()}
+                width={150}
+                height={150}
                 alt={mycartItem.title || "item"}
               />
             </div>
@@ -35,8 +35,7 @@ const CartItemSlot = () => {
                   ${mycartItem.price! * mycartItem.quantity}
                 </span>
               </div>
-              <div className="w-full">{mycartItem.description}</div>
-              <div className="flex  justify-center gap-12 items-center">
+              <div className="flex  justify-center gap-12 ">
                 <CartQuantModifier
                   mycartItem={mycartItem}
                   updateItemQuantityInCart={updateItemQuantityInCart}

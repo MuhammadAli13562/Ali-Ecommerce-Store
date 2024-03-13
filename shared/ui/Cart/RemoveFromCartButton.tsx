@@ -12,7 +12,7 @@ const RemoveFromCartButton = ({ product_id }: { product_id: string }) => {
   return (
     <Button
       onClick={handleRemoveFromCart}
-      className="bg-white hover:bg-red-400  text-sm font-medium text-black"
+      className="bg-white hover:bg-red-400  text-sm font-medium text-black self-end"
     >
       REMOVE
     </Button>
