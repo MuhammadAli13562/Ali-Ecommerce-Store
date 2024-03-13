@@ -17,7 +17,7 @@ const CartItemSlot = () => {
     >
       <div id="Cart Items" className={"flex flex-1 flex-col gap-8 mt-12 mb-6"}>
         {CartItems.map((mycartItem) => (
-          <div className="flex gap-4 bg-white rounded-lg p-4">
+          <div className="flex gap-4 bg-gray-200 border-2 border-solid border-gray-400 rounded-lg p-4">
             <div className="">
               <Image
                 src={urlFor(mycartItem.image).width(150).height(150).url()}

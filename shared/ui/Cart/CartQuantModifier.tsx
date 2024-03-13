@@ -19,7 +19,7 @@ const CartQuantModifier = ({
 
   return (
     <div className="flex flex-col gap-2 items-center justify-center">
-      <span>Quantity</span>
+      <span>Quantity : </span>
       <div className="flex">
         <button
           onClick={handleSubtractQuantitiy}
@@ -27,7 +27,7 @@ const CartQuantModifier = ({
         >
           -
         </button>
-        <div className="min-w-[25px] bg-gray-200 text-center">
+        <div className="min-w-[25px] w-[40px] border-y-2 border-gray-400 bg-gray-200 text-center">
           {mycartItem.quantity}
         </div>
         <button

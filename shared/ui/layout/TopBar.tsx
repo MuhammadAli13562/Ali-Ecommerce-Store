@@ -82,9 +82,9 @@ const NavigationLinks = () => {
   return (
     <div
       id="midtopbar"
-      className="flex-center border-0 border-gray-300 tansition-all duration-200 rounded-3xl bg-gray-100 "
+      className="flex-center border-0 border-gray-300 tansition-all duration-200  bg-gray-100 "
     >
-      <div className="flex-center relative border-2 border-gray-400  rounded-full px-2 py-[4px]">
+      <div className="flex-center relative border-0 border-gray-300   px-2 py-[6px]">
         {TopLinks &&
           TopLinks.map((mylink, index) => (
             <div className="relative  flex-center">
@@ -100,7 +100,7 @@ const NavigationLinks = () => {
         <motion.div
           initial={{ x: -width * 2.5, opacity: 0 }}
           animate={maskControls}
-          className={`absolute w-[${width}px] h-6  border-2 border-gray-800 bg-transparent rounded-full opacity-10`}
+          className={`absolute w-[${width}px] h-8  border-2 border-gray-600 0  opacity-10`}
         ></motion.div>
       </div>
     </div>

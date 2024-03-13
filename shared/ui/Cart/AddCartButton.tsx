@@ -35,7 +35,7 @@ const AddCartButton = ({ product }: { product: SanityValues["Product"] }) => {
 
   return (
     <Button
-      className="bg-white text-black border-2 border-solid border-gray-400 hover:text-white"
+      className="bg-gray-200 hover:bg-gray-300 hover:text-black text-black border-1 border-solid border-gray-300 "
       onClick={handleAddtoCart}
     >
       Add to Cart

@@ -31,7 +31,7 @@ const Checkout = () => {
     <div
       className={
         CartItems.length > 0
-          ? "flex flex-col border-dashed border-t-2 border-white"
+          ? "flex flex-col border-dashed border-t-2 border-black"
           : "hidden"
       }
     >
@@ -39,14 +39,14 @@ const Checkout = () => {
       <div id="Checkout" className=" flex justify-around mb-6">
         <div
           id="Total Amount"
-          className="text-white flex flex-col items-center"
+          className="text-black flex flex-col items-center"
         >
           <span className="text-3xl font-bold font-mono">Total:</span>
           <span className="text-2xl ">${TotalPrice}</span>
         </div>
         <Button
           onClick={handleCheckout}
-          className=" text-2xl font-mono p-6 text-white border-solid border-white border-2 bg-slate-800 hover:bg-slate-900  disabled:bg-gray-800"
+          className=" text-2xl font-mono p-6 text-black border-solid border-black border-2 bg-gray-300 hover:bg-gray-400  disabled:bg-gray-800"
           disabled={isPending}
         >
           GO TO CHECKOUT

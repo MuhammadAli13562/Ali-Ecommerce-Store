@@ -58,21 +58,21 @@ const CartTray = ({ showCart, setShowCart }: any) => {
       )}
       <div
         id="Cart Content"
-        className={`flex flex-col w-[400px] md:w-[480px]  fixed transition-transform duration-300 transform rounded-sm right-0 h-screen bg-black z-20 top-0 ${
+        className={`flex flex-col w-[400px] md:w-[480px]  fixed transition-transform duration-300 transform rounded-sm right-0 h-screen bg-white z-20 top-0 ${
           showCart ? "translate-x-0" : "translate-x-full "
         }`}
       >
         <div
-          className="flex justify-between border-b-2 border-gray-600 pb-6 "
+          className="flex justify-between border-b-2 border-gray-300 pb-6 shadow-xl"
           onClick={() => {
             setShowCart(false);
             document.body.style.overflow = "";
           }}
         >
-          <p className="font-bold flex-1 text-4xl mt-4 font-sans text-white text-center">
+          <p className="font-bold flex-1 text-4xl mt-4 font-sans text-black text-center">
             Shopping Cart
           </p>
-          <Button className=" bg-black text-xl  text-white mt-2 rounded-3xl">
+          <Button className=" bg-white border-2 border-black mr-2 text-xl  text-black mt-2 rounded-3xl hover:text-white">
             x
           </Button>
         </div>
