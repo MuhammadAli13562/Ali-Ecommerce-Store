@@ -5,6 +5,7 @@ import React from "react";
 import AddCartButton from "../Cart/AddCartButton";
 import Link from "next/link";
 import { nameToSlug } from "@/lib/functions/SlugNameconversion";
+import ScrollToTop from "../layout/scrollToTop";
 
 const ProductGrid = ({ Products }: { Products: SanityValues["Product"][] }) => {
   console.log("grid : ", Products);
@@ -17,6 +18,7 @@ const ProductGrid = ({ Products }: { Products: SanityValues["Product"][] }) => {
           return (
             <div className=" transition-all duration-200 border-2 border-solid border-gray-200 hover:border-black rounded-lg bg-white  h-auto py-2  col-center">
               <Link href={`/product/${slug}`}>
+                <ScrollToTop />
                 <div className=" flex flex-col p-2 justify-center items-center">
                   <Image
                     src={
