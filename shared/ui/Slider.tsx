@@ -6,7 +6,9 @@ import Autoplay from "embla-carousel-autoplay";
 import { CarouselImages } from "../constants/constants";
 
 const Slider = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ stopOnInteraction: false }),
+  ]);
 
   return (
     <div className="embla mb-32 overflow-x-hidden" ref={emblaRef}>
