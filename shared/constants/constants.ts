@@ -47,10 +47,9 @@ export const BottomLinks = [
 
 export const credits = ["NextJS , Vercel , Sanity , Stripe"];
 
-import winter from "@/public/Carousel/winter.jpeg";
-import fashionoutfit from "@/public/Carousel/fashionoutf.jpg";
-import fashionweek from "@/public/Carousel/fashionweek.jpg";
-import formal from "@/public/Carousel/formal.jpeg";
-import newspring from "@/public/Carousel/newspring.jpg";
+import one from "@/public/Carousel/one.jpg";
+import two from "@/public/Carousel/two.jpg";
+import three from "@/public/Carousel/three.jpg";
+import four from "@/public/Carousel/four.jpg";
 
-export const CarouselImages = [winter, formal, newspring];
+export const CarouselImages = [one, two, three, four];
