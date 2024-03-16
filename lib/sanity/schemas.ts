@@ -32,34 +32,22 @@ export const productType = defineType({
   ],
 });
 
-export const MenCategories = [
-  "Shirts",
-  "Accessories",
-  "Hats",
-  "Belts",
-  "Pants",
-  "Jackets",
-  "Casual",
-  "Formal",
-  "Shorts",
-];
+export const MenCategories = ["Shirts", "Belts", "Pants", "Jackets"];
 export const WomenCategories = [
   "Dresses",
   "Shirts",
-  "Leggings",
-  "Accessories",
-  "Sundress",
   "Sweaters",
   "Pants",
   "Hats",
+  "Coats",
 ];
 
-export const MenCategoriesOptions = MenCategories.map((cat) => ({
+export const MenCategoriesOptions = MenCategories.sort().map((cat) => ({
   value: cat.toLowerCase(),
   label: cat,
 }));
 
-export const WomenCategoriesOptions = WomenCategories.map((cat) => ({
+export const WomenCategoriesOptions = WomenCategories.sort().map((cat) => ({
   value: cat.toLowerCase(),
   label: cat,
 }));

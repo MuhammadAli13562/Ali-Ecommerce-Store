@@ -13,7 +13,8 @@ const Loader = () => {
             {new Array(8).fill(0).map(() => (
               <div className=" bg-white border-0 border-solid border-gray rounded-xl w-[270px] h-[430px] flex flex-col justify-center items-center">
                 <div className="flex-1 bg-gray-100 w-5/6 m-2 rounded-xl"></div>
-                <Skeleton count={3} width="220px" height="15px" />
+                <Skeleton count={1} width="180px" height="15px" />
+                <Skeleton count={1} width="80px" height="15px" />
               </div>
             ))}
           </div>
