@@ -51,26 +51,28 @@ const ProductQuant = ({ product }: { product: SanityValues["Product"] }) => {
   return (
     <div className="flex flex-col gap-12">
       {/** Quantity Setter */}
-      <div className="flex items-center justify-center  gap-12">
+      <div className="flex items-center justify-center px-2 md:px-12 gap-12">
         <div className="text-3xl font-bold">Quantity : </div>
-        <div className="flex items-center">
-          <button
-            className="bg-black text-white text-3xl w-[50px] h-[40px]"
-            onClick={handleSubtract}
-          >
-            -
-          </button>
-          <div className="bg-gray-100 text-3xl w-[50px] h-[40px] text-center">
-            {Quantity}
+        <div className="flex flex-1 items-center gap-12">
+          <div className="flex">
+            <button
+              className="bg-black text-white text-3xl w-[50px] h-[40px]"
+              onClick={handleSubtract}
+            >
+              -
+            </button>
+            <div className="bg-gray-100 text-3xl w-[50px] h-[40px] text-center">
+              {Quantity}
+            </div>
+            <button
+              className="bg-black text-white text-3xl  w-[50px] h-[40px]"
+              onClick={handleAdd}
+            >
+              +
+            </button>
           </div>
-          <button
-            className="bg-black text-white text-3xl  w-[50px] h-[40px]"
-            onClick={handleAdd}
-          >
-            +
-          </button>
+          <div className="text-3xl font-bold">${price}</div>
         </div>
-        <div className="text-3xl font-bold">${price}</div>
       </div>
       {/** Add Cart Button */}
       <Button
