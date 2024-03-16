@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { getIndexFromPath } from "@/lib/functions/getIndexFromPath";
+import { SizeBoundary } from "../utils";
 
 export default function TopBar() {
   useEffect(() => {
@@ -39,7 +40,7 @@ export default function TopBar() {
       <div className="flex justify-around items-center w-full ">
         <HomeLink />
         <NavigationLinks />
-        <div className="flex">
+        <div className="flex flex-col md:flex-row">
           <Cart />
           <AdminDashButton />
         </div>
@@ -51,7 +52,7 @@ export default function TopBar() {
 const HomeLink = () => {
   return (
     <Link
-      className="flex justify-center items-center md:justify-start  p-4 rounded-full "
+      className="hidden md:flex  justify-center items-center md:justify-start  p-4 rounded-full "
       href="/"
     >
       <Image src={logo} alt="logo" width={210} />
@@ -82,7 +83,7 @@ const NavigationLinks = () => {
   return (
     <div
       id="midtopbar"
-      className="flex-center border-0 border-gray-300 tansition-all duration-200  bg-gray-100 "
+      className="flex-center scale-[0.85] lg:scale-100 border-0 border-gray-300 tansition-all duration-200  bg-gray-100 "
     >
       <div className="flex-center relative border-0 border-gray-300   px-2 py-[6px]">
         {TopLinks &&
@@ -109,7 +110,7 @@ const NavigationLinks = () => {
 
 const AdminDashButton = () => {
   return (
-    <div className="relative flex flex-col bg-transparent border-2 border-gray-300 hover:bg-gray-200 text-black  rounded-xl">
+    <div className="relative scale-[0.7] md:scale-100 flex flex-col bg-transparent border-2 border-gray-300 hover:bg-gray-200 text-black  rounded-xl">
       <Link
         href="https://product2demo.sanity.studio"
         target="_blank"

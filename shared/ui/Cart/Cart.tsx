@@ -58,7 +58,7 @@ const CartTray = ({ showCart, setShowCart }: any) => {
       )}
       <div
         id="Cart Content"
-        className={`flex flex-col w-[400px] md:w-[480px]  fixed transition-transform duration-300 transform rounded-sm right-0 h-screen bg-white z-20 top-0 ${
+        className={`flex flex-col w-full sm:w-[480px]  fixed transition-transform duration-300 transform rounded-sm right-0 h-screen bg-white z-20 top-0 ${
           showCart ? "translate-x-0" : "translate-x-full "
         }`}
       >

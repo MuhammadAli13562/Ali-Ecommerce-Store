@@ -1,5 +1,3 @@
-import { deskTool } from "sanity/desk";
-
 // import { defineConfig } from "sanity";
 import { defineConfig } from "@sanity-typed/types";
 import type { InferSchemaValues } from "@sanity-typed/types";
