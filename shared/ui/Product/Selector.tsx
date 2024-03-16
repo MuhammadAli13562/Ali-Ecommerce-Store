@@ -15,7 +15,7 @@ const Selector = ({ gender }: { gender: string }) => {
   const Options = [{ value: "all", label: "All" }, ...genderedOptions];
 
   const handleChange = (e: any) => {
-    router.push(`/products/${gender}/${e.value}`);
+    router.push(`/categories/${gender}/${e.value}`);
   };
 
   const category = path.split("/").pop() || "all";

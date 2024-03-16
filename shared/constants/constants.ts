@@ -1,20 +1,20 @@
 export const TopLinks = [
   {
     category: "All",
-    reference: "/products",
+    reference: "/categories",
   },
   {
     category: "Men",
-    reference: "/products/men/all",
+    reference: "/categories/men/all",
   },
   {
     category: "Women",
-    reference: "/products/women/all",
+    reference: "/categories/women/all",
   },
 
   {
     category: "Kids",
-    reference: "/products/kids/all",
+    reference: "/categories/kids/all",
   },
 ];
 
@@ -53,3 +53,18 @@ import three from "@/public/Carousel/three.jpg";
 import four from "@/public/Carousel/four.jpg";
 
 export const CarouselImages = [one, two, three, four];
+
+import teeshirt from "@/public/Collage/teeman.jpg";
+import jeans from "@/public/Collage/jeans.jpg";
+
+export const TeeShirtCollage = {
+  image: teeshirt,
+  content: "Go out for some casual T-shirts bussiness",
+  href: "/categories/men/shirts",
+};
+
+export const JeansCollage = {
+  image: jeans,
+  content: "Wear Jeans to save the planet next sunday at 6th avenue",
+  href: "/categories/men/pants",
+};

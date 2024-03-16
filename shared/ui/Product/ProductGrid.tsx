@@ -16,10 +16,10 @@ const ProductGrid = ({ Products }: { Products: SanityValues["Product"][] }) => {
         {Products.map((product) => {
           const slug = nameToSlug(product.title || "");
           return (
-            <div className=" transition-all duration-200 border-2 border-solid border-gray-200 hover:border-black rounded-lg bg-white  h-auto py-2  col-center">
-              <Link href={`/product/${slug}`}>
+            <div className="  transition-all duration-200 border-2 border-solid border-gray-200 hover:border-black rounded-lg bg-white  h-auto py-2  col-center">
+              <Link href={`/product/${slug}`} className="flex flex-col gap-8">
                 <ScrollToTop />
-                <div className=" flex flex-col p-2 justify-center items-center">
+                <div className=" flex flex-col p-2 justify-center items-center ">
                   <Image
                     src={
                       (product?.image &&
@@ -33,7 +33,7 @@ const ProductGrid = ({ Products }: { Products: SanityValues["Product"][] }) => {
                   />
                 </div>
                 <div className="flex flex-col justify-center items-center gap-2">
-                  <div className="flex flex-col justify-center items-center ">
+                  <div className="flex flex-col justify-center items-center gap-2">
                     <h1 className="text-black">{product.title}</h1>
                     <p className="text-sm text-amber-600 text-center">{}</p>
                     <span className="font-bold text-lg text-slate-800">
@@ -42,9 +42,9 @@ const ProductGrid = ({ Products }: { Products: SanityValues["Product"][] }) => {
                   </div>
                 </div>
               </Link>
-              <div className="mt-2">
+              {/* <div className="mt-2">
                 <AddCartButton product={product} />
-              </div>
+              </div> */}
             </div>
           );
         })}

@@ -12,7 +12,7 @@ const BottomBar = () => {
           <div>{cred}</div>
         ))}
       </div>
-      <div> All Rights Reserved - Copywrited 2024</div>
+      <div> All Rights Reserved - 2024</div>
       <div
         id="base bar"
         className="p-4 w-full border-t-2 border-black bg-black"

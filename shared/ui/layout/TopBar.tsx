@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { getIndexFromPath } from "@/lib/functions/getIndexFromPath";
-import { SizeBoundary } from "../utils";
 
 export default function TopBar() {
   useEffect(() => {

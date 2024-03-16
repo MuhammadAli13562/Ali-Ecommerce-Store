@@ -5,7 +5,6 @@ import React from "react";
 import ProductQuant from "./ProductQuant";
 import PeopleAlsoLiked from "./PeopleAlsoLiked";
 import Link from "next/link";
-import { SizeBoundary } from "../utils";
 
 const ProductDetails = ({ Product }: { Product: SanityValues["Product"] }) => {
   console.log("details : ", Product);
@@ -14,7 +13,7 @@ const ProductDetails = ({ Product }: { Product: SanityValues["Product"] }) => {
   return (
     <div className="flex flex-col">
       <Link
-        href={`/products/${gender}/all`}
+        href={`/categories/${gender}/all`}
         className="absolute  ml-10 p-0 -mt-12 2xl:mt-0"
       >
         <div className="flex items-center gap-2 self-start">

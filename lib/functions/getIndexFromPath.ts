@@ -3,7 +3,7 @@ export const getIndexFromPath = (path: string) => {
   const indexfromCat = ["all", "men", "women", "kids"];
   const category =
     pathArray.length === 2
-      ? pathArray[1] === "products"
+      ? pathArray[1] === "categories"
         ? "all"
         : ""
       : pathArray[2];

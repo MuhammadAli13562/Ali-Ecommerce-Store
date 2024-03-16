@@ -11,8 +11,11 @@ const page = async ({ params }: { params: { slug: string } }) => {
 
   const filteredProduct = Porducts.find(
     (prod) =>
-      prod.title?.toLowerCase().replace(/-/g, "").replace(/ /g, "") ===
-      product_title
+      prod.title
+        ?.toLowerCase()
+        .replace(/[^a-z]/g, "")
+        .replace(/-/g, "")
+        .replace(/ /g, "") === product_title
   );
 
   console.log("filtered product : ", filteredProduct);
