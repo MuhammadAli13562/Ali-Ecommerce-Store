@@ -36,11 +36,11 @@ const ProductDetails = ({ Product }: { Product: SanityValues["Product"] }) => {
             alt={`${Product.title}`}
             className="border-2 border-gray-100 shadow-lg  "
           />
-          <div className="bg-gray-100 border-2 border-gray-300 shadow-lg border-solid md:w-[660px] h-[700px] w-[600px] flex flex-col gap-12 p-4">
+          <div className="bg-gray-100 border-2 p-4 border-gray-300 shadow-lg border-solid md:w-[660px] h-[700px] w-[600px] flex flex-col gap-6 ">
             <div className="text-3xl font-bold text-center">
               {Product.title}
             </div>
-            <div className=" flex justify-center ">
+            <div className=" flex flex-1 justify-center ">
               <div className="w-4/5 text-lg">
                 <span className="font-bold">Description</span> :{" "}
                 {Product.description}
