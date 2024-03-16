@@ -7,7 +7,7 @@ export async function getAllData() {
     tags: ["Product"],
   });
 
-  console.log("products : ", products);
+  console.log("products fetched");
   return products;
 }
 
@@ -17,7 +17,7 @@ export async function getLatestData() {
     tags: ["Product"],
   });
 
-  console.log("products : ", products);
+  console.log("products latest fetched ");
   return products;
 }
 

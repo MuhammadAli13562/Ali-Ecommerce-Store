@@ -4,7 +4,7 @@ import {
   MenCategoriesOptions,
   WomenCategoriesOptions,
 } from "@/lib/sanity/schemas";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Select from "react-select";
 
 const Selector = ({ gender }: { gender: string }) => {
