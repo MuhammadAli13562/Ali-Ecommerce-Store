@@ -13,12 +13,16 @@ const page = async ({
   const gender = params.gender;
 
   const Products = await getAllData();
-  const FilteredProducts =
+  let FilteredProducts =
     category === "all"
       ? Products.filter((prod) => prod.Gender === gender)
       : Products.filter(
           (prod) => prod.Gender === gender && prod.category === category
         );
+  FilteredProducts = FilteredProducts.sort((a: any, b) =>
+    a.category?.localeCompare(b.category)
+  );
+
   return (
     <div className="col-center gap-12 ">
       <div className="flex gap-2 md:gap-8 text-xl  lg:text-3xl self-start pl-6 lg:p-0 lg:self-center font-bold">
