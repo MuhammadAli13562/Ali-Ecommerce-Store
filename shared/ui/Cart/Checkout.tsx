@@ -4,7 +4,7 @@ import { useCart } from "@/app/CartProvider";
 import { Button } from "@/components/ui/button";
 import { CreateStripeSession } from "@/lib/stripe/CreateSession";
 import React, { useTransition } from "react";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 
 const Checkout = () => {
@@ -15,32 +15,26 @@ const Checkout = () => {
 
   const handleCheckout = async () => {
     startTransition(async () => {
-      try {
-        const session = await CreateStripeSession(CartItems);
-        console.log("session : ", session);
+      const session = await toast.promise(CreateStripeSession(CartItems), {
+        pending: "Checking Out",
+        success: "Checked Out",
+        error: "Error Checking Out",
+      });
+      setTimeout(() => {
         router.push(session.url);
-
-        toast.success("Checkout Successful !");
-      } catch (error: any) {
-        toast("Error Checking Out !");
-      }
+      }, 1200);
     });
   };
 
   return (
     <div
       className={
-        CartItems.length > 0
-          ? "flex flex-col border-dashed border-t-2 border-black"
-          : "hidden"
+        CartItems.length > 0 ? "flex flex-col border-dashed border-t-2 border-black" : "hidden"
       }
     >
       <div className="h-12"></div>
       <div id="Checkout" className=" flex justify-around mb-6">
-        <div
-          id="Total Amount"
-          className="text-black flex flex-col items-center"
-        >
+        <div id="Total Amount" className="text-black flex flex-col items-center">
           <span className="text-3xl font-bold font-mono">Total:</span>
           <span className="text-2xl ">${TotalPrice}</span>
         </div>

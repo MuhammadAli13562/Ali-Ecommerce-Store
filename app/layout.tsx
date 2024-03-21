@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-
 import "./globals.css";
 import TopBar from "@/shared/ui/layout/TopBar";
 import BottomBar from "@/shared/ui/layout/BottomBar";
 import { CartProvider } from "./CartProvider";
-import { Toaster } from "react-hot-toast";
+import ToastContainerWrapper from "./ToastContainerWrapper";
 
 export const metadata: Metadata = {
   title: "Ali Store",
@@ -28,8 +27,8 @@ export default function RootLayout({
             <div className="flex-1 "> {children}</div>
             <BottomBar />
           </div>
-          <Toaster />
         </CartProvider>
+        <ToastContainerWrapper />
       </body>
     </html>
   );
