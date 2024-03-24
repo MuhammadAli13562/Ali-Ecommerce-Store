@@ -1,4 +1,4 @@
-import { credits } from "../../../../shared/constants/constants";
+import { credits } from "@/constants";
 
 const BottomBar = () => {
   return (

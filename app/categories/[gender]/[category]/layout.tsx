@@ -1,6 +1,6 @@
 import React, { ReactNode, Suspense } from "react";
 import Loading from "./loading";
-import Selector from "@/components/shared/ui/Product/Selector";
+import Selector from "@/components/shared/Product/Selector";
 
 const layout = async ({
   children,

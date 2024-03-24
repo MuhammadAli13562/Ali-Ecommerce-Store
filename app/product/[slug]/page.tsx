@@ -1,5 +1,5 @@
-import ProductDetails from "@/components/shared/ui/Product/ProductDetails";
-import NoItemFound from "@/components/shared/ui/layout/NoItemFound";
+import ProductDetails from "@/components/shared/Product/ProductDetails";
+import NoItemFound from "@/components/shared/layout/NoItemFound";
 import { SlugtoName } from "@/lib/functions/SlugNameconversion";
 import { getAllData } from "@/lib/sanity/getallData";
 

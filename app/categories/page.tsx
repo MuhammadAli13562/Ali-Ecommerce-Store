@@ -1,4 +1,4 @@
-import ProductGrid from "@/components/shared/ui/Product/ProductGrid";
+import ProductGrid from "@/components/shared/Product/ProductGrid";
 import { getAllData } from "@/lib/sanity/getallData";
 import React from "react";
 import Skeleton from "react-loading-skeleton";

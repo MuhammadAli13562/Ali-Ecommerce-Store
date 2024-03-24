@@ -1,5 +1,5 @@
-import ProductGrid from "@/components/shared/ui/Product/ProductGrid";
-import NoItemFound from "@/components/shared/ui/layout/NoItemFound";
+import ProductGrid from "@/components/shared/Product/ProductGrid";
+import NoItemFound from "@/components/shared/layout/NoItemFound";
 import { getAllData } from "@/lib/sanity/getallData";
 
 import React from "react";

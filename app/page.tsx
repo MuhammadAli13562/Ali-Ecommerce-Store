@@ -1,8 +1,8 @@
-import { JeansCollage } from "@/shared/constants/constants";
-import ProductGrid from "@/components/shared/ui/Product/ProductGrid";
-import Slider from "@/components/shared/ui/Slider";
+import ProductGrid from "@/components/shared/Product/ProductGrid";
+import Slider from "@/components/shared/Slider";
 import { getLatestData } from "@/lib/sanity/getallData";
-import InvertedCollage from "@/components/shared/ui/decorative/InvertedCollage";
+import InvertedCollage from "@/components/shared/decorative/InvertedCollage";
+import { JeansCollage } from "@/constants";
 
 export default async function Home() {
   return (

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { CartProvider } from "./CartProvider";
 import ToastContainerWrapper from "./ToastContainerWrapper";
-import BottomBar from "@/components/shared/ui/layout/BottomBar";
-import TopBar from "@/components/shared/ui/layout/TopBar";
+import BottomBar from "@/components/shared/layout/BottomBar";
+import TopBar from "@/components/shared/layout/TopBar";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Ali Store",
@@ -24,7 +26,9 @@ export default function RootLayout({
         <CartProvider>
           <TopBar />
           <div className="mt-48 flex flex-col min-h-screen ">
-            <div className="flex-1">{children}</div>
+            <div className="flex-1">
+              <Suspense fallback={<Loading />}>{children}</Suspense>
+            </div>
             <BottomBar />
           </div>
         </CartProvider>

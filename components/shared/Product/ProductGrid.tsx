@@ -2,7 +2,6 @@ import { SanityValues } from "@/lib/sanity/sanity.config";
 import urlFor from "@/lib/sanity/urlFor";
 import Image from "next/image";
 import React from "react";
-import AddCartButton from "../Cart/AddCartButton";
 import Link from "next/link";
 import { nameToSlug } from "@/lib/functions/SlugNameconversion";
 import ScrollToTop from "../layout/scrollToTop";
@@ -22,9 +21,7 @@ const ProductGrid = ({ Products }: { Products: SanityValues["Product"][] }) => {
                 <div className=" flex flex-col p-2 justify-center items-center ">
                   <Image
                     src={
-                      (product?.image &&
-                        urlFor(product.image).width(600).height(700).url()) ||
-                      ""
+                      (product?.image && urlFor(product.image).width(600).height(700).url()) || ""
                     }
                     loading="eager"
                     alt={product.description || "alt"}
@@ -36,9 +33,7 @@ const ProductGrid = ({ Products }: { Products: SanityValues["Product"][] }) => {
                   <div className="flex flex-col justify-center items-center gap-2">
                     <h1 className="text-black">{product.title}</h1>
                     <p className="text-sm text-amber-600 text-center">{}</p>
-                    <span className="font-bold text-lg text-slate-800">
-                      ${product.price}
-                    </span>
+                    <span className="font-bold text-lg text-slate-800">${product.price}</span>
                   </div>
                 </div>
               </Link>

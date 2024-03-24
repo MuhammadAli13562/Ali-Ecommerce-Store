@@ -3,8 +3,7 @@
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { CarouselImages } from "../../../shared/constants/constants";
-import Link from "next/link";
+import { CarouselImages } from "@/constants";
 
 const Slider = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ stopOnInteraction: false })]);

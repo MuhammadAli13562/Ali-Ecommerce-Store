@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/logonew.png";
-import { TopLinks } from "../../../../shared/constants";
+import { TopLinks } from "@/constants";
 import Cart from "../Cart/Cart";
 import { useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
