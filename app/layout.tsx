@@ -24,7 +24,7 @@ export default function RootLayout({
         <CartProvider>
           <TopBar />
           <div className="mt-48 flex flex-col min-h-screen ">
-            <div>{children}</div>
+            <div className="flex-1">{children}</div>
             <BottomBar />
           </div>
         </CartProvider>
