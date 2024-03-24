@@ -5,8 +5,8 @@ const BottomBar = () => {
     <div className=" flex flex-col justify-center items-center gap-4 w-full mt-12 bg-black">
       <div className="flex bg-black w-full text-gray-400 justify-center mt-12 text-xl">
         <span className="pr-4"> Powered by :</span>
-        {credits.map((cred) => (
-          <div>{cred}</div>
+        {credits.map((cred, index) => (
+          <div key={index}>{cred}</div>
         ))}
       </div>
       <div> All Rights Reserved - 2024</div>

@@ -16,8 +16,11 @@ const CartItemSlot = () => {
       }
     >
       <div id="Cart Items" className={"flex flex-1 flex-col gap-8 mt-12 mb-6"}>
-        {CartItems.map((mycartItem) => (
-          <div className="flex gap-4 bg-gray-200 border-2 border-solid border-gray-400 rounded-lg p-4">
+        {CartItems.map((mycartItem, index) => (
+          <div
+            key={index}
+            className="flex gap-4 bg-gray-200 border-2 border-solid border-gray-400 rounded-lg p-4"
+          >
             <div className="">
               <Image
                 src={urlFor(mycartItem.image).width(150).height(150).url()}
@@ -28,9 +31,7 @@ const CartItemSlot = () => {
             </div>
             <div className="flex flex-col justify-between pt-2  w-3/5">
               <div className="flex justify-between items-center">
-                <span className="font-bold text-black text-xl w-3/4">
-                  {mycartItem.title}
-                </span>
+                <span className="font-bold text-black text-xl w-3/4">{mycartItem.title}</span>
                 <span className=" font-extrabold text-xl text-black">
                   ${mycartItem.price! * mycartItem.quantity}
                 </span>

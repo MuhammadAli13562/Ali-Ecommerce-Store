@@ -11,8 +11,9 @@ const Slider = () => {
   return (
     <div className="embla mb-32 overflow-x-hidden" ref={emblaRef}>
       <div className="flex gap-12">
-        {CarouselImages.map((img) => (
+        {CarouselImages.map((img, index) => (
           <Image
+            key={index}
             alt="featured"
             src={img}
             width="1300"

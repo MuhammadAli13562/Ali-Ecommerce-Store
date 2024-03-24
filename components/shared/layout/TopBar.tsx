@@ -87,7 +87,7 @@ const NavigationLinks = () => {
       <div className="flex-center relative border-0 border-gray-300   px-2 py-[6px]">
         {TopLinks &&
           TopLinks.map((mylink, index) => (
-            <div className="relative  flex-center">
+            <div key={index} className="relative  flex-center">
               <Link
                 className="  rounded-xl w-[100px] flex-center text-black  text-md md:text-lg font-sans"
                 onClick={() => handleClickLink(index)}
