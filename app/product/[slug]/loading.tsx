@@ -1,4 +1,4 @@
-import DetailsLoader from "@/shared/ui/layout/DetailsLoader";
+import DetailsLoader from "@/components/shared/ui/layout/DetailsLoader";
 
 const Loading = () => {
   return <DetailsLoader />;

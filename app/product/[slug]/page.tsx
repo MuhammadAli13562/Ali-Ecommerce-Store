@@ -1,7 +1,7 @@
+import ProductDetails from "@/components/shared/ui/Product/ProductDetails";
+import NoItemFound from "@/components/shared/ui/layout/NoItemFound";
 import { SlugtoName } from "@/lib/functions/SlugNameconversion";
 import { getAllData } from "@/lib/sanity/getallData";
-import ProductDetails from "@/shared/ui/Product/ProductDetails";
-import NoItemFound from "@/shared/ui/layout/NoItemFound";
 
 const page = async ({ params }: { params: { slug: string } }) => {
   const slug = params.slug;

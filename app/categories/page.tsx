@@ -1,5 +1,5 @@
+import ProductGrid from "@/components/shared/ui/Product/ProductGrid";
 import { getAllData } from "@/lib/sanity/getallData";
-import ProductGrid from "@/shared/ui/Product/ProductGrid";
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 

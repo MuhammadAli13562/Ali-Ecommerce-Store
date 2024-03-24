@@ -1,7 +1,4 @@
-import Image from "next/image";
-import React from "react";
-import logo from "@/public/logo3.png";
-import { credits } from "@/shared/constants/constants";
+import { credits } from "../../../../shared/constants/constants";
 
 const BottomBar = () => {
   return (
@@ -13,10 +10,7 @@ const BottomBar = () => {
         ))}
       </div>
       <div> All Rights Reserved - 2024</div>
-      <div
-        id="base bar"
-        className="p-4 w-full border-t-2 border-black bg-black"
-      >
+      <div id="base bar" className="p-4 w-full border-t-2 border-black bg-black">
         <p className="text-center font-mono text-white text-lg ">
           Built with <span>&#x2764;</span> by Ali
         </p>

@@ -3,13 +3,11 @@
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { CarouselImages } from "../constants/constants";
+import { CarouselImages } from "../../../shared/constants/constants";
 import Link from "next/link";
 
 const Slider = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ stopOnInteraction: false }),
-  ]);
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ stopOnInteraction: false })]);
 
   return (
     <div className="embla mb-32 overflow-x-hidden" ref={emblaRef}>

@@ -1,6 +1,6 @@
 "use client";
 
-import Loader from "@/shared/ui/layout/Loader";
+import Loader from "@/components/shared/ui/layout/Loader";
 import React from "react";
 
 const Loading = () => {

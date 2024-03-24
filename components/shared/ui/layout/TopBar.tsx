@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/logonew.png";
-import { TopLinks } from "../../constants";
+import { TopLinks } from "../../../../shared/constants";
 import Cart from "../Cart/Cart";
 import { useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
@@ -110,11 +110,7 @@ const NavigationLinks = () => {
 const AdminDashButton = () => {
   return (
     <div className="relative scale-[0.7] md:scale-100 flex flex-col bg-transparent border-2 border-gray-300 hover:bg-gray-200 text-black  rounded-xl">
-      <Link
-        href="https://product2demo.sanity.studio"
-        target="_blank"
-        className="p-2"
-      >
+      <Link href="https://product2demo.sanity.studio" target="_blank" className="p-2">
         <div className="self-end ">
           {/* <span className=" text-2xl absolute -top-[15px] right-2 transform -rotate-45 ">
             &#8594;

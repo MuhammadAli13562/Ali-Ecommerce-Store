@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import TopBar from "@/shared/ui/layout/TopBar";
-import BottomBar from "@/shared/ui/layout/BottomBar";
 import { CartProvider } from "./CartProvider";
 import ToastContainerWrapper from "./ToastContainerWrapper";
+import BottomBar from "@/components/shared/ui/layout/BottomBar";
+import TopBar from "@/components/shared/ui/layout/TopBar";
 
 export const metadata: Metadata = {
   title: "Ali Store",
