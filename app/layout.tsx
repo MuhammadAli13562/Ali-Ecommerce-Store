@@ -4,6 +4,8 @@ import TopBar from "@/shared/ui/layout/TopBar";
 import BottomBar from "@/shared/ui/layout/BottomBar";
 import { CartProvider } from "./CartProvider";
 import ToastContainerWrapper from "./ToastContainerWrapper";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Ali Store",
@@ -24,7 +26,9 @@ export default function RootLayout({
         <CartProvider>
           <TopBar />
           <div className="mt-48 flex flex-col min-h-screen ">
-            <div className="flex-1 "> {children}</div>
+            <div>
+              <Suspense fallback={<Loading />}>{children}</Suspense>
+            </div>
             <BottomBar />
           </div>
         </CartProvider>
