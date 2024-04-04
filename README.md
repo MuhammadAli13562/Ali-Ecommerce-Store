@@ -1,4 +1,5 @@
 # Ecommerce Store
+Tech Stack : NextJS , Sanity , Stripe
 
 **Preview**
 
